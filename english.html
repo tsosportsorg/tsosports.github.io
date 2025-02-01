@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSO Sports - English</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --background-color: #f0f9ff;
+            --text-color: #1e293b;
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(120deg, #e0f2fe, #f0f9ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .home-button-float {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 15px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-button-float:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-button-float i {
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #64748b;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .sport-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .sport-icon {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sport-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-container {
+            width: 100%;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 15px 30px;
+            }
+
+            .sports-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .sport-card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <!-- Home Button -->
+    <a href="index.html" class="home-button-float">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h1>Learn Sports Rules</h1>
+            <p class="subtitle">Watch our detailed explanation of sports rules and regulations</p>
+        </div>
+
+        <div class="sports-grid">
+            <!-- Pickleball -->
+            <div class="sport-card">
+                <i class="fas fa-table-tennis sport-icon"></i>
+                <h3 class="sport-title">Pickleball</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/E2oPdIDV5nc" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Baseball -->
+            <div class="sport-card">
+                <i class="fas fa-baseball-ball sport-icon"></i>
+                <h3 class="sport-title">Baseball</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/E160D" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Golf -->
+            <div class="sport-card">
+                <i class="fas fa-golf-ball sport-icon"></i>
+                <h3 class="sport-title">Golf</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/mRknA-YtRuM" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Tennis -->
+            <div class="sport-card">
+                <i class="fas fa-baseball sport-icon"></i>
+                <h3 class="sport-title">Tennis</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TuM5Uh4ii3Q" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- American Football -->
+            <div class="sport-card">
+                <i class="fas fa-football-ball sport-icon"></i>
+                <h3 class="sport-title">American Football</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/CfuH9N_67Pk" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Basketball -->
+            <div class="sport-card">
+                <i class="fas fa-basketball-ball sport-icon"></i>
+                <h3 class="sport-title">Basketball</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SBBvTI-cvik" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Cricket -->
+            <div class="sport-card">
+                <i class="fas fa-cricket-bat-ball sport-icon"></i>
+                <h3 class="sport-title">Cricket</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/M5MD5i6VpYQ" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Soccer -->
+            <div class="sport-card">
+                <i class="fas fa-futbol sport-icon"></i>
+                <h3 class="sport-title">Soccer</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dFLaabgXhpc" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Volleyball -->
+            <div class="sport-card">
+                <i class="fas fa-volleyball-ball sport-icon"></i>
+                <h3 class="sport-title">Volleyball</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/hLZ44KBWEbo" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Ice Hockey -->
+            <div class="sport-card">
+                <i class="fas fa-hockey-puck sport-icon"></i>
+                <h3 class="sport-title">Ice Hockey</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/JFaPf7Kl6aU" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- UFC -->
+            <div class="sport-card">
+                <i class="fas fa-fist-raised sport-icon"></i>
+                <h3 class="sport-title">UFC</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/5CgVaLgmeUU" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- F1 -->
+            <div class="sport-card">
+                <i class="fas fa-flag-checkered sport-icon"></i>
+                <h3 class="sport-title">Formula 1</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/lqbc_Lg8Wow" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Field Hockey -->
+            <div class="sport-card">
+                <i class="fas fa-hockey-stick sport-icon"></i>
+                <h3 class="sport-title">Field Hockey</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/M83C70ILng0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
