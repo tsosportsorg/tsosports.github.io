@@ -1,396 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSO Sports - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TSO Sports - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --background-color: #f0f9ff;
-            --text-color: #1e293b;
-            --youtube-red: #ff0000;
-            --gradient-start: #2563eb;
-            --gradient-end: #1e40af;
-        }
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #3b82f6;
+      --background-color: #f0f9ff;
+      --text-color: #1e293b;
+      --youtube-red: #ff0000;
+      --gradient-start: #2563eb;
+      --gradient-end: #1e40af;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            position: relative;
-            overflow-x: hidden;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(120deg, #e0f2fe, #f0f9ff);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
+    .background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(120deg, #e0f2fe, #f0f9ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
 
-        .header {
-            margin-bottom: 50px;
-            position: relative;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
+    .header {
+      margin-bottom: 50px;
+      position: relative;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
 
-        .logo {
-            font-size: 48px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
+    .logo {
+      font-size: 48px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
 
-        h1 {
-            font-size: 2.5em;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
+    h1 {
+      font-size: 2.5em;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
 
-        .subtitle {
-            font-size: 1.2em;
-            color: #64748b;
-            margin-bottom: 30px;
-        }
+    .subtitle {
+      font-size: 1.2em;
+      color: #64748b;
+      margin-bottom: 30px;
+    }
 
-        .language-options {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
+    .language-options {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
 
-        .language-choice {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 30px;
-            padding: 30px;
-            min-width: 300px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
+    .language-choice {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      padding: 30px;
+      min-width: 300px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
 
-        .language-choice:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
-        }
+    .language-choice:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+    }
 
-        .language-title {
-            font-size: 1.8em;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
+    .language-title {
+      font-size: 1.8em;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
 
-        .buttons-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
+    .buttons-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
 
-        .site-button {
-            width: 100%;
-            padding: 15px 25px;
-            border-radius: 15px;
-            font-size: 1.1em;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            cursor: pointer;
-        }
+    .site-button {
+      width: 100%;
+      padding: 15px 25px;
+      border-radius: 15px;
+      font-size: 1.1em;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+    }
 
-        .site-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
-            background: var(--secondary-color);
-        }
+    .site-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+      background: var(--secondary-color);
+    }
 
-        .youtube-button {
-            background: white;
-            color: var(--youtube-red);
-            border: 2px solid var(--youtube-red);
-        }
+    .youtube-button {
+      background: white;
+      color: var(--youtube-red);
+      border: 2px solid var(--youtube-red);
+    }
 
-        .youtube-button:hover {
-            background: var(--youtube-red);
-            color: white;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
-        }
+    .youtube-button:hover {
+      background: var(--youtube-red);
+      color: white;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+    }
 
-        .youtube-icon {
-            font-size: 1.4em;
-            animation: pulse 2s infinite;
-        }
+    .youtube-icon {
+      font-size: 1.4em;
+      animation: pulse 2s infinite;
+    }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
 
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+    /* Shop Section Styles */
+    .shop-section {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
+    /* Add a subtle pulse animation for the shop icon */
+    @keyframes shopPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .shop-icon {
+      animation: shopPulse 2s infinite;
+    }
 
-        .modal-container {
-            position: relative;
-            width: 90%;
-            max-width: 1000px;
-            margin: auto;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            transform: scale(0.7);
-            transition: transform 0.3s ease;
-        }
+    /* Modal Styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-        .modal-overlay.active .modal-container {
-            transform: scale(1);
-        }
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
 
-        .modal-header {
-            padding: 20px;
-            background: var(--primary-color);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .modal-container {
+      position: relative;
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      transform: scale(0.7);
+      transition: transform 0.3s ease;
+    }
 
-        .modal-title {
-            font-size: 1.5em;
-            font-weight: 600;
-        }
+    .modal-overlay.active .modal-container {
+      transform: scale(1);
+    }
 
-        .modal-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-            padding: 5px;
-            transition: transform 0.3s ease;
-        }
+    .modal-header {
+      padding: 20px;
+      background: var(--primary-color);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .modal-close:hover {
-            transform: scale(1.1);
-        }
+    .modal-title {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
 
-        .modal-content {
-            position: relative;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            background: #000;
-        }
+    .modal-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      padding: 5px;
+      transition: transform 0.3s ease;
+    }
 
-        .modal-content iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+    .modal-close:hover {
+      transform: scale(1.1);
+    }
 
-        @media (max-width: 768px) {
-            .language-options {
-                flex-direction: column;
-                gap: 30px;
-            }
+    .modal-content {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      background: #000;
+    }
 
-            .language-choice {
-                width: 100%;
-                min-width: unset;
-            }
+    .modal-content iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
 
-            h1 {
-                font-size: 2em;
-            }
+    @media (max-width: 768px) {
+      .language-options {
+        flex-direction: column;
+        gap: 30px;
+      }
 
-            .subtitle {
-                font-size: 1em;
-            }
+      .language-choice {
+        width: 100%;
+        min-width: unset;
+      }
 
-            .language-title {
-                font-size: 1.5em;
-            }
+      h1 {
+        font-size: 2em;
+      }
 
-            .modal-container {
-                width: 95%;
-                margin: 20px auto;
-            }
+      .subtitle {
+        font-size: 1em;
+      }
 
-            .modal-title {
-                font-size: 1.2em;
-            }
-        }
-    </style>
+      .language-title {
+        font-size: 1.5em;
+      }
+
+      .modal-container {
+        width: 95%;
+        margin: 20px auto;
+      }
+
+      .modal-title {
+        font-size: 1.2em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="background-animation"></div>
-    
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <i class="fas fa-trophy"></i>
-            </div>
-            <h1>Welcome to TSO Sports</h1>
-            <div class="subtitle">Experience sports content in your preferred language</div>
-        </div>
+  <div class="background-animation"></div>
 
-        <div class="language-options">
-            <!-- English Option -->
-            <div class="language-choice">
-                <h2 class="language-title">English</h2>
-                <div class="buttons-wrapper">
-                    <a href="english.html" class="site-button">
-                        <i class="fas fa-language"></i>
-                        Visit English Site
-                    </a>
-                    <button onclick="openVideoModal('o_Nq24TarIA', 'English Channel Video')" class="site-button youtube-button">
-                        <i class="fab fa-youtube youtube-icon"></i>
-                        Watch Video
-                    </button>
-                </div>
-            </div>
-
-            <!-- Hindi Option -->
-            <div class="language-choice">
-                <h2 class="language-title">हिंदी</h2>
-                <div class="buttons-wrapper">
-                    <a href="hindi.html" class="site-button">
-                        <i class="fas fa-language"></i>
-                        हिंदी साइट देखें
-                    </a>
-                    <a href="https://www.youtube.com/@SportsInHindi" target="_blank" class="site-button youtube-button">
-                        <i class="fab fa-youtube youtube-icon"></i>
-                        यूट्यूब पर देखें
-                    </a>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <i class="fas fa-trophy"></i>
+      </div>
+      <h1>Welcome to TSO Sports</h1>
+      <div class="subtitle">Experience sports content in your preferred language</div>
     </div>
 
-    <!-- Video Modal -->
-    <div class="modal-overlay" id="videoModal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle">TSO Sports</h3>
-                <button class="modal-close" onclick="closeModal()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-content">
-                <iframe id="videoFrame" 
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                </iframe>
-            </div>
+    <!-- English and Hindi Options in One Row -->
+    <div class="language-options">
+      <!-- English Option -->
+      <div class="language-choice">
+        <h2 class="language-title">English</h2>
+        <div class="buttons-wrapper">
+          <a href="english.html" class="site-button">
+            <i class="fas fa-language"></i>
+            Visit English Site
+          </a>
+          <button onclick="openVideoModal('o_Nq24TarIA', 'English Channel Video')" class="site-button youtube-button">
+            <i class="fab fa-youtube youtube-icon"></i>
+            Watch Video
+          </button>
         </div>
+      </div>
+
+      <!-- Hindi Option -->
+      <div class="language-choice">
+        <h2 class="language-title">हिंदी</h2>
+        <div class="buttons-wrapper">
+          <a href="hindi.html" class="site-button">
+            <i class="fas fa-language"></i>
+            हिंदी साइट देखें
+          </a>
+          <a href="https://www.youtube.com/@SportsInHindi" target="_blank" class="site-button youtube-button">
+            <i class="fab fa-youtube youtube-icon"></i>
+            यूट्यूब पर देखें
+          </a>
+        </div>
+      </div>
     </div>
 
-    <script>
-        function openVideoModal(videoId, title) {
-            // Use YouTube's privacy-enhanced mode
-            document.getElementById('videoFrame').src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('videoModal').classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
+    <!-- Shop Section Placed at the Bottom -->
+    <div class="shop-section">
+      <div class="language-choice">
+        <h2 class="language-title">Shop</h2>
+        <div class="buttons-wrapper">
+          <a href="shop.html" class="site-button">
+            <i class="fas fa-shopping-cart shop-icon"></i>
+            View Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function closeModal() {
-            const modal = document.getElementById('videoModal');
-            modal.classList.remove('active');
-            document.getElementById('videoFrame').src = ''; // Stop video playback
-            document.body.style.overflow = ''; // Restore scrolling
-        }
+  <!-- Video Modal -->
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">TSO Sports</h3>
+        <button class="modal-close" onclick="closeModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-content">
+        <iframe id="videoFrame" 
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
 
-        // Close modal when clicking outside
-        document.getElementById('videoModal').addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal-overlay')) {
-                closeModal();
-            }
-        });
+  <script>
+    function openVideoModal(videoId, title) {
+      // Use YouTube's privacy-enhanced mode
+      document.getElementById('videoFrame').src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('videoModal').classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
 
-        // Handle escape key to close modal
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
+    function closeModal() {
+      const modal = document.getElementById('videoModal');
+      modal.classList.remove('active');
+      document.getElementById('videoFrame').src = ''; // Stop video playback
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('videoModal').addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-overlay')) {
+        closeModal();
+      }
+    });
+
+    // Handle escape key to close modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>

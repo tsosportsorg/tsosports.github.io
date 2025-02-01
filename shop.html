@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSO Sports - Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #f0f9ff;
+            --text-color: #1e293b;
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(120deg, #e0f2fe, #f0f9ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .home-button-float {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 15px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-button-float:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px) scale(1.1);
+        }
+
+        .home-button-float i {
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #64748b;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .product-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+
+
+        .buy-button {
+        background: #ff9900; /* Amazon's orange color */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+        transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .buy-button:hover {
+            background: #e47911; /* Darker Amazon orange */
+            transform: translateY(-2px);
+        }
+
+        .category-filter {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 10px 20px;
+            border: none;
+            background: var(--card-bg);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+        }
+
+        .filter-button.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .filter-button:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <a href="index.html" class="home-button-float">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h1>TSO Sports Shop</h1>
+            <p class="subtitle">Get the best sports gear and merchandise</p>
+        </div>
+
+        <div class="category-filter">
+            <button class="filter-button active" data-category="all">All</button>
+            <button class="filter-button" data-category="pickleball">Pickleball</button>
+            <button class="filter-button" data-category="nfl">NFL</button>
+            <button class="filter-button" data-category="electronics">Gaming</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Dynamic product data with ASIN for images and direct referral links for purchases
+        const products = [
+            { name: "Joola Ben Johns", asin: "B0DC725LSV", category: "pickleball", referral_link: "https://amzn.to/3CyNQuf" },
+            { name: "Pickleball Balls", asin: "B09V1TG15G", category: "pickleball", referral_link: "https://amzn.to/4hvYBg0" },
+            { name: "NFL Football", asin: "B08BZX1BL2", category: "nfl", referral_link: "https://amzn.to/4hHlqxk" },
+            { name: "Madden NFL", asin: "B0D31YDVYL", category: "nfl", referral_link: "https://amzn.to/40UKwmH" },
+            { name: "Macbook Air", asin: "B08N5WRWNW", category: "electronics", referral_link: "https://amzn.to/4jFQ0J9" },
+            { name: "Oculus Meta Quest 3", asin: "B0C8VKH1ZH", category: "electronics", referral_link: "https://amzn.to/4hCymUR" },
+        ];
+
+        function createProductCard(product) {
+            const imgUrl = `https://images.amazon.com/images/P/${product.asin}.jpg`;
+            return `
+                <div class="product-card" data-category="${product.category}">
+                    <img src="${imgUrl}" alt="${product.name}" />
+                    <h3>${product.name}</h3>
+                    <a href="${product.referral_link}" class="buy-button" target="_blank">
+                        <i class="fas fa-shopping-cart"></i> Buy on Amazon
+                    </a>
+                </div>
+            `;
+        }
+
+        // Function to display products
+        function displayProducts(category = 'all') {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+            
+            const filteredProducts = category === 'all' 
+                ? products 
+                : products.filter(product => product.category === category);
+            
+            filteredProducts.forEach(product => {
+                productsGrid.innerHTML += createProductCard(product);
+            });
+        }
+
+
+
+        displayProducts();
+
+        // Add event listeners to filter buttons
+        document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                document.querySelector('.filter-button.active').classList.remove('active');
+                button.classList.add('active');
+                
+                // Filter products
+                const category = button.dataset.category;
+                displayProducts(category);
+            });
+        });
+    </script>
+</body>
+</html>
